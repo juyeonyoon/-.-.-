@@ -9,3 +9,5 @@
 :pushpin: 신빅해 팀 노션페이지: <https://helpful-euphonium-78e.notion.site/X-c698a1f90dfa445d8f0a8347a8dfacda>
 
 :pushpin: 신빅해 개인 노션페이지: <https://kaput-cemetery-382.notion.site/2ac7d689f19942a4a627d14d040fcdfc>
+
+![페이지](https://user-images.githubusercontent.com/83544107/210390414-03aa0f22-dd4e-4331-b82f-40f5417bab80.jpeg)
