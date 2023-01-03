@@ -2,6 +2,8 @@
 
 [신.빅.해] 신한카드 부문 우승(1위) 수상작 (2022.09~2022.10)
 
+[우승 자료 ppt](https://github.com/juyeonyoon/Shinhan_Bigdata_Hackathon/tree/main/[신.빅.해]발표 자료(최종).pdf)
+
 :pushpin: 신빅해 홈페이지: <https://sites.google.com/view/sinbigha/>
 
 :pushpin: 신빅해 팀 노션페이지: <https://helpful-euphonium-78e.notion.site/X-c698a1f90dfa445d8f0a8347a8dfacda>
