@@ -1,10 +1,10 @@
-PROC IMPORT datafile = "ÆÄÀÏ À§Ä¡.csv"
+PROC IMPORT datafile = "íŒŒì¼ ìœ„ì¹˜.csv"
 dbms = csv
 out = dat;
 getnames = Yes;
 RUN;
 
-/*ÄÃ·³ ÇÕÄ¡±â - schema_sub.xlsx ÆÄÀÏ Âü°í*/
+/*ì»¬ëŸ¼ í•©ì¹˜ê¸° - schema_sub.xlsx íŒŒì¼ ì°¸ê³ */
 data dat2; set dat;
 Bhouse = B1+B2+B3+B4+B5;
 Btraffic = B7+B8+B9+B10+B11;
@@ -29,30 +29,30 @@ Boil = B161+B162+B163+B164;
 Btax = B12;
 run;
 
-/*´Ü¼ø¼±ÇüÈ¸±Í¸ğµ¨*/
+/*ë‹¨ìˆœì„ í˜•íšŒê·€ëª¨ë¸*/
 proc reg data = dat2;
 model B167 = Bhouse Btraffic Bgoods Bonline Bfood Betc Bfurniture Bfee Bcloth Bcultural Bactivity Binsurance Bedu Bwedding Bfuneral Bcar Bpro Bdoc Bmanufactur Boil Btax B54 B55 B56;
 run;quit;
 
-/*1Â÷ ÀÚ±âÈ¸±Í¿ÀÂ÷ ÀûÇÕ*/
+/*1ì°¨ ìê¸°íšŒê·€ì˜¤ì°¨ ì í•©*/
 proc autoreg data = dat2;
 model B167 = Bhouse Btraffic Bgoods Bonline Bfood Betc Bfurniture Bfee Bcloth Bcultural Bactivity Binsurance Bedu Bwedding Bfuneral Bcar Bpro Bdoc Bmanufactur Boil Btax B54 B55 B56 /nlag= 1 method = ml dwprob;
 run;quit;
 /*
-ERROR: JVM(Java virtual machine) ¿¹¿ÜÀÔ´Ï´Ù. java.lang.OutOfMemoryError: Java heap space.
+ERROR: JVM(Java virtual machine) ì˜ˆì™¸ì…ë‹ˆë‹¤. java.lang.OutOfMemoryError: Java heap space.
 
 WARNING: The marginal probabilities of Durbin-Watson cannot be obtained since you have too many observations or
          deficient data matrix.
 */
-/*JAVA °æ·Î ¼öÁ¤ ±ÇÇÑ ¾ø¾î¼­ Ã³¸® ºÒ°¡*/
+/*JAVA ê²½ë¡œ ìˆ˜ì • ê¶Œí•œ ì—†ì–´ì„œ ì²˜ë¦¬ ë¶ˆê°€*/
 
-/*±×·ìº° º¯¼ö ÆÇ´Ü*/
+/*ê·¸ë£¹ë³„ ë³€ìˆ˜ íŒë‹¨*/
 /*1. Bhouse*/
 proc reg data = dat2;
 model B167 = B1 B2 B3 B4 B5;
 run;quit;
 
-/*1-2. Bhouse 1Â÷ ÀÚ±âÈ¸±Í¿ÀÂ÷ÀûÇÕ*//*¾ÈµÊ!*/
+/*1-2. Bhouse 1ì°¨ ìê¸°íšŒê·€ì˜¤ì°¨ì í•©*//*ì•ˆë¨!*/
 proc autoreg data = dat2;
 model B167 = B1 B2 B3 B4 B5 / method = ml dwprob;
 run;quit;
